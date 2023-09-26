@@ -2,36 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Municipality;
+
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 
 class MunicipalityController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+            // $categorias = Categoria::all();
+            // $plataformas = Plataforma::all();
+
+        $municipalities = Municipality::all();
+        dd($municipalities);
+        return view('municipalities.index', compact('municipalities'));
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
